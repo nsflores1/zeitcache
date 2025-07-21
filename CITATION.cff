@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: zeitcache
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Nathaniel
+    family-names: Flores
+    email: nsf1@williams.edu
+    affiliation: Williams College
+repository-code: 'https://github.com/nsflores1/zeitcache'
+abstract: Simple functional caching for xarray pipelines
+license: MIT
