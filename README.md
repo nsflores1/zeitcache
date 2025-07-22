@@ -23,9 +23,31 @@ def reduction_simple(ds):
 
 dataset = reduction_simple(dataset)
 ```
-Just like that, you now have automatic caching. See the documentation for more information on how this works, and how to change `zeitcache`'s default settings. 
+Just like that, you now have automatic caching. You can also do something more imperative, if that's your style:
+```python
+def reduction_simple(ds):
+    return ds.mean(dims=('lat', 'lon', 'time'))
+
+dataset = zeitforce("my_dataset", dataset, reduction_simple) 
+```
+Alternatively, if you'd prefer not to do the caching immediately, or want to map functions onto thunks later on (maybe functional programming is more your style), you can use `zeitdelay` to do that:
+```python
+dataset_thunk = zeitdelay("my_dataset", dataset)
+# some time later
+def some_expensive_function(ds):
+    ...
+result = dataset_thunk(some_expensive_function)
+```
+Do note that this makes your code harder to read.
 
 **Important:** you must remember to give each dataset a unique name, otherwise you risk collision! Also, `zeitcache`'s hashing algorithm doesn't actually check the data itself but rather its structure in order to make a hash. This works if and only if you make each name unique!
+
+Please see the docstrings for more information on how to use each function.
+
+## Future Work
+- Allow users to pass an alternative hashing function
+- Ship a not-O(1) hashing function as an alternative
+- Make the code even lazier internally
 
 ## License
 This code is MIT licensed. Please follow the terms of that license. Also, if you end up using this in published work, please cite it. Even though it's small, attribution helps justify continued development. See `CITATION.cff` for details. 
