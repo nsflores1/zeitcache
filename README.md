@@ -54,7 +54,7 @@ These are roughly ordered from most to least important.
 - Support more types of compression algorithms for different needs
 
 ## The Name
-In German, "zeit" means time, and "cache" is the same thing as in English. That's what this software usually does: it caches time. A native speaker could also read it as "Zeitkasse", which means something like "time checkout" or "time cash register", and that's fitting too, since the cached data are things you can withdraw from later to save on time.
+In German, "zeit" means time, and "cache" is the same thing as in English. That's what this software usually does: it caches stuff to save you time. A native speaker could also read it as "Zeitkasse", which means something like "time checkout" or "time cash register", and that's fitting too, since the cached data are things you can withdraw from later to save on time.
 
 ## License
 This code is MIT licensed. Please follow the terms of that license. Also, if you end up using this in published work, please cite it. Even though it's small, attribution helps justify continued development. See `CITATION.cff` for details. 
