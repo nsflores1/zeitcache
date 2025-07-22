@@ -1,11 +1,11 @@
-import os
-import logging
 import functools
+import logging
+import os
 
 logger = logging.getLogger(__name__)
 
-from .io import _setup_directory, _eager_read_buffer, _eager_write_buffer
 from .hash import _hash_dataset_naive
+from .io import _eager_read_buffer, _eager_write_buffer, _setup_directory
 
 
 # the imperative non-decorator version. always does something NOW

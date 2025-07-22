@@ -1,12 +1,12 @@
+import io
 import logging
 import os
-import io
 import tempfile
 
 logger = logging.getLogger(__name__)
 
-import zstandard as zstd
 import xarray as xr
+import zstandard as zstd
 
 from .types import _da_or_ds
 
