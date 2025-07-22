@@ -1,9 +1,9 @@
 # zeitcache
-*Stupid-fast functional caching for `xarray` pipelines*
+*Stupid-fast functional-flavored caching for `xarray` pipelines*
 
 ## Introduction
 `zeitcache` is a wrapper function for `xarray` methods that can automatically create and restore precomputed results for those methods, saving computing resources. It is especially useful for the following workflows:
-- Reproducible scientific computing code, as you can write idiomatic code without having to worry about performance
+- Reproducible scientific computing code, so you can write idiomatic code without having to worry about performance
 - Rapid development, where there's no time for something more complicated like `snakemake` or `prefect`
 - Improving performance of preexisting code, as `zeitcache` fits in transparently
 - Situations where expensive reductions are commonplace in the code
@@ -13,6 +13,8 @@ If you have a `DataArray`, an immutable function to apply to it, and want to cut
 ## Utilization
 Simply take a call like this:
 ```python
+from zeitcache import zeitcache
+
 dataset = dataset.mean(dims=('lat', 'lon', 'time'))
 ```
 And rewrite it as this:
@@ -45,9 +47,14 @@ Do note that this makes your code harder to read.
 Please see the docstrings for more information on how to use each function.
 
 ## Future Work
+These are roughly ordered from most to least important.
 - Allow users to pass an alternative hashing function
 - Ship a not-O(1) hashing function as an alternative
 - Make the code even lazier internally
+- Support more types of compression algorithms for different needs
+
+## The Name
+In German, "zeit" means time, and "cache" is the same thing as in English. That's what this software usually does: it caches time. A native speaker could also read it as "Zeitkasse", which means something like "time checkout" or "time cash register", and that's fitting too, since the cached data are things you can withdraw from later to save on time.
 
 ## License
 This code is MIT licensed. Please follow the terms of that license. Also, if you end up using this in published work, please cite it. Even though it's small, attribution helps justify continued development. See `CITATION.cff` for details. 
