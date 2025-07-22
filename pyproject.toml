@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "zeitcache"
+version = "0.1.0"
+description = "Stupid-fast functional cache for xarray pipelines"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Nathaniel Flores", email = "nsf1@williams.edu" }]
+requires-python = ">=3.8"
+dependencies = [
+    "xarray",
+    "dask",
+    "scipy",
+    "pandas",
+    "zstandard",
+    "numpy",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "ruff", "mypy"]
+
+[tool.hatch.build]
+packages = ["src/zeitcache"]
+
+[tool.hatch.envs.test]
+dependencies = ["pytest"]
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "DEBUG"
