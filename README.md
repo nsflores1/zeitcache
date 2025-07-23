@@ -47,9 +47,11 @@ Do note that this makes your code harder to read.
 Please see the docstrings for more information on how to use each function.
 
 ## Future Work
-These are roughly ordered from most to least important.
+These are roughly ordered from most to least important. 
+- Add type hints throughout the code (*will* look ugly, but useful)
 - Allow users to pass an alternative hashing function
 - Ship a not-O(1) hashing function as an alternative
+- Warn users if there are two datasets with the same name but different hashes in the directory (so they aren't accidentally duping data) 
 - Make the code even lazier internally
 - Support more types of compression algorithms for different needs
 
