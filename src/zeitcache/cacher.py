@@ -37,7 +37,7 @@ def zeitforce(name_hint, data, fn, *, log_level=30, cache_dir="./cache", kwargs=
 
 
 # the imperative decorator version. always does something NOW
-def zeitcache(name_hint=None, *, log_level=30, cache_dir="./cache", kwargs=None):
+def zeitcache(name_hint, *, log_level=30, cache_dir="./cache", kwargs=None):
     """
     Cache the result of applying a function to a DataArray or Dataset, saving to disk with a ZSTD-compressed netCDF.
 

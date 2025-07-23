@@ -1,5 +1,4 @@
 import tempfile
-import os
 from pathlib import Path
 
 import xarray as xr
@@ -11,6 +10,7 @@ def create_dataset(dir):
     ds = xr.DataArray([1, 2, 3], dims="x")
     ds.name = "green eggs"
     return zeitdelay("green eggs", ds)
+
 
 def test_thunk():
     with tempfile.TemporaryDirectory() as tempdir:

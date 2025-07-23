@@ -19,7 +19,7 @@ dataset = dataset.mean(dims=('lat', 'lon', 'time'))
 ```
 And rewrite it as this:
 ```python
-@zeitcache(name_hint="my_dataset")
+@zeitcache("my_dataset")
 def reduction_simple(ds):
     return ds.mean(dims=('lat', 'lon', 'time'))
 
