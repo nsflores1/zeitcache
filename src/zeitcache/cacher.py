@@ -101,7 +101,7 @@ def zeitdelay(name_hint, data, **opts):
     DataArray or Dataset
         This depends on what your passed datatype is.
     """
-    return lambda fn: zeitcache(name_hint, data, fn=fn, **opts)
+    return lambda fn: zeitforce(name_hint, data, fn, **opts)
 
 
 # the thing that actually does all the heavy lifting
